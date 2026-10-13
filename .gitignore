@@ -1,0 +1,35 @@
+# PyCharm / IDE
+.idea/
+*.iml
+.vscode/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+
+# Виртуальные окружения
+venv/
+.venv/
+env/
+ENV/
+
+# Переменные окружения и секреты
+.env
+.env.*
+
+# Тесты и кэш
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# ОС
+.DS_Store
+Thumbs.db
