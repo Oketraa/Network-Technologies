@@ -1,0 +1,68 @@
+{% extends "home.html" %}
+
+{% block todo_container %}
+<main class="container">
+    <hr>
+    <section class="mb-4">
+        <form action="/todo" method="post">
+            <div class="input-group mb-3">
+                <input type="text" name="item" class="form-control"
+                       placeholder="Введите новую задачу" aria-label="Новая задача" required>
+                <button class="btn btn-outline-primary" type="submit">Добавить задачу</button>
+            </div>
+        </form>
+    </section>
+
+    {% if edit_todo %}
+        <section class="card">
+            <div class="card-body">
+                <h4 class="mb-3">Редактирование задачи №{{ edit_todo.id }}</h4>
+                <form action="/todo/{{ edit_todo.id }}/edit" method="post">
+                    <div class="input-group">
+                        <input type="text" name="item" value="{{ edit_todo.item }}"
+                               class="form-control" aria-label="Текст задачи" required>
+                        <button type="submit" class="btn btn-outline-primary">Сохранить</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <a href="/todo" class="btn btn-link mt-3">Вернуться к списку задач</a>
+    {% elif todo %}
+        <article class="card">
+            <div class="card-body">
+                <h4>Задача №{{ todo.id }}</h4>
+                <p class="mb-0"><strong>Содержание:</strong> {{ todo.item }}</p>
+            </div>
+        </article>
+        <div class="d-flex gap-2 align-items-center mt-3">
+            <a href="/todo" class="btn btn-link">Вернуться к списку задач</a>
+            <a href="/todo/{{ todo.id }}/edit" class="btn btn-outline-primary">Редактировать</a>
+            <form action="/todo/{{ todo.id }}/delete" method="post" class="m-0">
+                <button type="submit" class="btn btn-outline-danger">Удалить задачу</button>
+            </form>
+        </div>
+    {% else %}
+        <section>
+            <h2 class="text-center mb-3">Список задач</h2>
+            <div class="card">
+                <ul class="list-group list-group-flush">
+                    {% for todo in todos %}
+                        <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
+                            <span>{{ loop.index }}. <a href="/todo/{{ todo.id }}">{{ todo.item }}</a></span>
+                            <div class="d-flex gap-2 align-items-center">
+                                <a href="/todo/{{ todo.id }}/edit" class="btn btn-outline-primary btn-sm">Редактировать</a>
+                                <form action="/todo/{{ todo.id }}/delete" method="post" class="m-0">
+                                    <button type="submit" class="btn btn-outline-danger btn-sm">Удалить</button>
+                                </form>
+                            </div>
+                        </li>
+                    {% else %}
+                        <li class="list-group-item text-muted">Пока нет добавленных задач.</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <p class="text-muted mt-2">Всего задач: {{ todos | length }}</p>
+        </section>
+    {% endif %}
+</main>
+{% endblock %}
