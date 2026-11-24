@@ -1,0 +1,7 @@
+<div class="page-title"><h1>Подтвердите номер</h1><p>{{code_hint}}</p></div>
+
+<section class="surface">
+<form data-log-event="auth.code_submitted" action="/action/verify_code" method="post" data-log-target="order.html">{{!csrf}}<label class="input-label" for="code">Код подтверждения</label><input class="input code-input" type="text" id="code" name="code" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" autocomplete="one-time-code" required placeholder="••••••"><button class="button button-primary" type="submit">Продолжить <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button></form><a class="sub-link" href="{{inbox_url}}" target="_blank" rel="noopener">Открыть уведомления</a>
+<form method="post" action="/action/resend_code" data-log-event="auth.code_requested">{{!csrf}}<button type="submit" class="button button-quiet">Отправить код ещё раз</button></form>
+<a class="sub-link" href="{{back}}">{{back_label}}</a>
+</section>

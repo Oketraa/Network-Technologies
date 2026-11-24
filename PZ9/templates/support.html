@@ -1,0 +1,33 @@
+<div class="page-title"><h1>Как мы можем помочь?</h1></div>{{!tickets}}
+
+<section class="surface flush-surface"><h2 class="list-title">Выберите раздел</h2><a class="menu-row" href="active.html"><span class="menu-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 11 2-5h10l2 5"/><path d="M4 11h16v8H4z"/><path d="M6 19v2m12-2v2"/><path d="M8 15h1m6 0h1"/></svg></span><span class="menu-text"><strong>Текущая поездка</strong><small>Маршрут, автомобиль, посадка</small></span><svg class="menu-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a><a class="menu-row" href="profile_edit.html#card"><span class="menu-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M2 10h20"/></svg></span><span class="menu-text"><strong>Оплата и поездки</strong><small>Стоимость и история заказов</small></span><svg class="menu-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a><a class="menu-row" href="completed.html"><span class="menu-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 3 6 7 .9-5 5 .9 7.1L12 18l-5.9 3 .9-7.1-5-5 7-.9Z"/></svg></span><span class="menu-text"><strong>Оставить отзыв</strong><small>Поделиться впечатлениями</small></span><svg class="menu-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
+</section>
+
+<section class="surface support-highlight"><div class="help-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 13v-2a8 8 0 0 1 16 0v2M4 13h4v6H4zm12 0h4v6h-4z"/></svg></div><div><h2>Служба поддержки</h2><p>Мы готовы помочь в поездке и после неё.</p></div><a class="button button-primary " href="contact.html" data-log-event="support.contact_opened" data-log-level="info">Написать в поддержку <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
+</section>
+
+<section class="surface"><h2>Частые вопросы</h2>
+  <button type="button" class="button button-quiet" data-open-dialog="find-car" aria-haspopup="dialog">Как найти свой автомобиль?</button>
+  <button type="button" class="button button-quiet" data-open-dialog="unlock-car" aria-haspopup="dialog">Как открыть двери?</button>
+</section>
+
+<section class="surface journal-section">
+  <button type="button" class="button button-quiet" data-open-dialog="journey-log" aria-haspopup="dialog">Журнал действий</button>
+</section>
+
+<dialog id="find-car" class="app-dialog" aria-labelledby="find-car-title">
+  <h2 id="find-car-title">Как найти свой автомобиль?</h2>
+  <p>В карточке поездки показаны номер автомобиля и место посадки.</p>
+  <form method="dialog"><button class="button button-quiet">Закрыть</button></form>
+</dialog>
+<dialog id="unlock-car" class="app-dialog" aria-labelledby="unlock-car-title">
+  <h2 id="unlock-car-title">Как открыть двери?</h2>
+  <p>Когда автомобиль прибудет, воспользуйтесь кнопкой «Разблокировать двери».</p>
+  <form method="dialog"><button class="button button-quiet">Закрыть</button></form>
+</dialog>
+<dialog id="journey-log" class="app-dialog" aria-labelledby="journey-log-title">
+  <h2 id="journey-log-title">Журнал действий</h2>
+  <button type="button" class="button button-secondary" data-export-journal>Скачать журнал</button>
+  <p class="journal-status" role="status" data-export-status></p>
+  <form method="dialog"><button class="button button-quiet">Закрыть</button></form>
+</dialog>

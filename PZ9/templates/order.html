@@ -1,0 +1,46 @@
+<div class="page-title order-title">
+  <h1>Куда поедем?</h1>
+  <a class="order-address-link" href="#route-addresses">Ввести адреса</a>
+</div>
+
+<form method="post" action="/action/quote" data-log-event="order.quote_requested" data-log-target="quote.html" data-map-picker>
+  {{!csrf}}
+  <input type="hidden" name="pickup_point" value="{{pickup_point}}">
+  <input type="hidden" name="dropoff_point" value="{{dropoff_point}}">
+
+  <div class="map-selector" role="group" aria-label="Выбор точки маршрута">
+    <button type="button" class="button button-quiet" data-pick-point="pickup" aria-pressed="true">Откуда</button>
+    <button type="button" class="button button-quiet" data-pick-point="destination" aria-pressed="false">Куда</button>
+  </div>
+  <div class="route-map" data-route-map="{}" role="region" aria-label="Карта выбора маршрута"></div>
+  <p class="map-status" role="status" data-map-status>Отметьте точку на карте или введите адрес.</p>
+  <button type="button" class="button button-quiet map-center" data-map-center disabled>Выбрать центр карты</button>
+
+  <section class="surface" id="route-addresses" aria-label="Адреса маршрута">
+    <div class="sheet-head"><h2>Ваш маршрут</h2></div>
+    <div class="route-line">
+      <label class="place">
+        <span class="point point-from"></span>
+        <span class="place-text">
+          <small>Откуда</small>
+          <input name="from" aria-label="Адрес посадки" maxlength="140" value="{{pickup}}" placeholder="Город, улица, дом">
+          <small class="address-status" data-point-value="pickup" aria-live="polite"></small>
+        </span>
+      </label>
+      <label class="place">
+        <span class="point point-to"></span>
+        <span class="place-text">
+          <small>Куда</small>
+          <input name="to" aria-label="Адрес назначения" maxlength="140" value="{{destination}}" placeholder="Город, улица, дом">
+          <small class="address-status" data-point-value="destination" aria-live="polite"></small>
+        </span>
+      </label>
+    </div>
+    <div class="horizontal-rule"></div>
+    <div class="form-columns">
+      <label><span class="input-label">Подача</span><select class="input" name="when">{{!pickup_times}}</select></label>
+      <label><span class="input-label">Пассажиры</span><select class="input" name="seats">{{!seat_options}}</select></label>
+    </div>
+    <button type="submit" class="button button-primary">Рассчитать поездку</button>
+  </section>
+</form>

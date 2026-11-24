@@ -1,0 +1,5 @@
+<div class="page-title"><h1>Личные данные</h1></div>
+
+<section class="surface">
+<form data-log-event="profile.save_requested" action="/action/profile" method="post" data-log-target="profile.html">{{!csrf}}<label class="input-label" for="name">Имя</label><input class="input" name="name" id="name" required maxlength="80" value="{{name}}"><label class="input-label" for="tel2">Телефон</label><input class="input" id="tel2" type="tel" required maxlength="24" autocomplete="tel" name="phone" value="{{phone}}"><label class="input-label" for="email">Электронная почта</label><input class="input" name="email" id="email" type="email" maxlength="160" value="{{email}}"><div class="horizontal-rule"></div><label class="input-label" for="card">Способ оплаты</label><select class="input" name="payment" id="card">{{!payments}}</select><button type="submit" class="button button-primary">Сохранить</button></form>
+</section>

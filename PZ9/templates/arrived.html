@@ -1,0 +1,6 @@
+<div class="page-title"><h1>Автомобиль на месте</h1><p>Подойдите к указанной машине</p></div>
+{{!route_map}}
+
+<section class="surface"><span class="status-line"><i></i> Ожидает посадку</span>{{!vehicle}}<div class="location-row"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.6"/></svg> <div><small>Место встречи</small><strong>{{pickup}}</strong></div></div>
+<form class="action-form" action="/action/unlock" method="post" data-log-target="unlocked.html" data-log-event="trip.unlock_requested" data-log-level="info">{{!csrf}}<input type="hidden" name="order" value="{{order_id}}"><button type="submit" class="button button-primary ">Разблокировать двери <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="11" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></button></form>{{!cancel}}<a class="sub-link" href="support.html">Не могу найти машину</a>
+</section>

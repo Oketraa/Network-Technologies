@@ -1,0 +1,6 @@
+<div class="page-title"><h1>Завершить поездку раньше?</h1><p>Автомобиль остановится в ближайшем разрешённом месте</p></div>
+{{!route_map}}
+
+<section class="surface"><div class="location-row"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.6"/></svg><div><small>Ближайшее безопасное место</small><strong>Уточняется по маршруту</strong></div></div>
+<form class="action-form" action="/action/early_finish" method="post" data-log-target="completed.html" data-log-event="trip.early_stop_confirmed" data-log-level="warn">{{!csrf}}<input type="hidden" name="order" value="{{order_id}}"><button type="submit" class="button button-primary ">Подтвердить остановку</button></form><a class="sub-link" href="{{back}}">Продолжить поездку</a>
+</section>
